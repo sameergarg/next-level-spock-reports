@@ -34,7 +34,7 @@ class ReportExtension implements IGlobalExtension
                 enProp.load(cl.getResourceAsStream("${MESSAGES_PATH}.properties"))
 
                 def css = "  <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />"
-                def styleStream = cl.getResourceAsStream("spock-style.css")
+                def styleStream = cl.getResourceAsStream("report-style.css")
                 if (styleStream != null)
                 {
                     if (new File(REPORT_DIR).exists() == false)
@@ -82,6 +82,20 @@ class ReportExtension implements IGlobalExtension
     .errorMessage {
         white-space: pre;
     }
+\tdiv
+\t{
+\t\theight:25px;
+\t\t
+\t}
+    div.block-SETUP *
+    {
+        background-color: green;
+    }
+    div.block-WHEN *
+    {
+        background-color: blue;
+    }
+\t
   </style>
 '''
                 }

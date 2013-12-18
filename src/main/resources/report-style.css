@@ -1,0 +1,62 @@
+﻿body {
+    margin: 10;
+    padding: 10;
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+table.whereBlock {
+    background-color:#ffffff;
+    border:1px solid #c3c3c3;
+    border-collapse:collapse;
+}
+
+table.whereBlock th {
+    background-color:#e3e3e3;
+    border:1px solid #c3c3c3;
+    padding:3px;
+    vertical-align:top;
+}
+
+table.whereBlock td {
+    border:1px solid #c3c3c3;
+    padding:3px;
+    vertical-align:top;
+}
+
+tr.error {
+    background-color: #bb0000;
+    color: white;
+}
+tr.error td {
+    background-color: #bb0000;
+    color: white;
+}
+.errorMessage {
+    white-space: pre;
+}
+div
+{
+    height:25px;
+}
+div.block-SETUP
+{
+    color: green;
+}
+div.block-WHEN
+{
+    color: green;
+}
+div.block-THEN
+{
+    color: green;
+}
+div.block-WHERE
+{
+    color: green;
+}
+
