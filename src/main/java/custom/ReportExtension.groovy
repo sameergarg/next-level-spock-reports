@@ -208,7 +208,7 @@ ${css}
                 {
                     new File(REPORT_DIR).mkdirs()
                 }
-                def out = new File("${REPORT_DIR}/SPOCK-${specInfo.description}.html")
+                def out = new File("${REPORT_DIR}/${specInfo.description}.html")
                 out.withWriter("UTF-8") { w -> w.write(buffer.toString())
                 }
             }

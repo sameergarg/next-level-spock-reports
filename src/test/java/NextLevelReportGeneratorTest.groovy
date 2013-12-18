@@ -1,3 +1,4 @@
+import org.junit.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -19,7 +20,7 @@ class NextLevelReportGeneratorTest extends Specification
 
     }
 
-    @Unroll
+    /*@Unroll
     def "don't talk to #person"()
     {
         given: "you met #person"
@@ -33,6 +34,6 @@ class NextLevelReportGeneratorTest extends Specification
 
         where: person << ["sally", "harry"]
 
-    }
+    }*/
 }
 
