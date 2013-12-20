@@ -4,7 +4,13 @@ package custom
 
 import groovy.io.FileType
 import groovy.xml.MarkupBuilder
-println("target directory ${project.build.directory}")
+
+def specsDirectory = new File("${project.build.directory}/next-level-spock-reports")
+if(!specsDirectory.exists()){
+    println("Directory ${project.build.directory}/next-level-spock-reports does not exists. Reports will not be generated")
+    return
+}
+
 new File("${project.build.directory}/next-level-spock-reports/index.html").withWriter { writer ->
     new MarkupBuilder(writer).html {
         head {
@@ -12,12 +18,12 @@ new File("${project.build.directory}/next-level-spock-reports/index.html").withW
         }
         body {
             ul {
-                def specsDirectory = new File("${project.build.directory}/next-level-spock-reports")
+
                 specsDirectory.eachFileRecurse (FileType.FILES) {file->
                     //escape && as &amp;&amp; when using in maven pom
                     if(file.name.toLowerCase().endsWith("html") && !file.name.toLowerCase().endsWith("index.html")){
                         li {
-                            a(href: file.toURI(), file.name)
+                            a(href: file.name, file.name.replaceAll("(\\.(\\w+)\$)",""))
                         }
                     }
 
